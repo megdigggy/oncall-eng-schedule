@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On-Call Schedule Template</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+        
+        .header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 120px repeat(7, 1fr);
+            gap: 1px;
+            background: #e9ecef;
+            margin: 20px;
+        }
+        
+        .grid-header {
+            background: #495057;
+            color: white;
+            padding: 12px 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 13px;
+        }
+        
+        .grid-cell {
+            background: white;
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 13px;
+            min-height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .week-label {
+            background: #6c757d;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .l1-cell {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .l2-backend {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+        }
+        
+        .l2-frontend {
+            background: #e8f5e8;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .l2-protocol {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .person-name {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .role-label {
+            font-size: 11px;
+            color: #666;
+            margin-top: 2px;
+        }
+        
+        .legend {
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+        
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+        
+        .notes {
+            margin: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+        }
+        
+        .notes h3 {
+            margin: 0 0 10px 0;
+            color: #856404;
+        }
+        
+        .notes ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+            color: #856404;
+        }
+        
+        @media (max-width: 768px) {
+            .schedule-grid {
+                font-size: 11px;
+                margin: 10px;
+            }
+            
+            .grid-cell {
+                padding: 8px 4px;
+                min-height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Engineering On-Call Schedule</h1>
+            <p>Q3 2025 - L1 Weekly Rotation | L2 Monthly Rotation</p>
+        </div>
+        
+        <div class="schedule-grid">
+            <!-- Header Row -->
+            <div class="grid-header">Week</div>
+            <div class="grid-header">Mon</div>
+            <div class="grid-header">Tue</div>
+            <div class="grid-header">Wed</div>
+            <div class="grid-header">Thu</div>
+            <div class="grid-header">Fri</div>
+            <div class="grid-header">Sat</div>
+            <div class="grid-header">Sun</div>
+            
+            <!-- Week 1: Jul 21-27 -->
+            <div class="grid-cell week-label">Jul 21-27</div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Sarah Chen</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Sarah Chen</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Sarah Chen</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Sarah Chen</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Sarah Chen</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">James UK</div>
+                <div class="role-label">L1 Weekend</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">James UK</div>
+                <div class="role-label">L1 Weekend</div>
+            </div>
+            
+            <!-- Week 2: Jul 28 - Aug 3 -->
+            <div class="grid-cell week-label">Jul 28 - Aug 3</div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Marcus Rivera</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Marcus Rivera</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Marcus Rivera</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Marcus Rivera</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Marcus Rivera</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">James UK</div>
+                <div class="role-label">L1 Weekend</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">James UK</div>
+                <div class="role-label">L1 Weekend</div>
+            </div>
+            
+            <!-- Week 3: Aug 4-10 -->
+            <div class="grid-cell week-label">Aug 4-10</div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Emily Zhang</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Emily Zhang</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Emily Zhang</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Emily Zhang</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Emily Zhang</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Alex Thompson</div>
+                <div class="role-label">L1 Weekend</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Alex Thompson</div>
+                <div class="role-label">L1 Weekend</div>
+            </div>
+            
+            <!-- Week 4: Aug 11-17 -->
+            <div class="grid-cell week-label">Aug 11-17</div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">David Kim</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">David Kim</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">David Kim</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">David Kim</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">David Kim</div>
+                <div class="role-label">L1 Primary</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Alex Thompson</div>
+                <div class="role-label">L1 Weekend</div>
+            </div>
+            <div class="grid-cell l1-cell">
+                <div class="person-name">Alex Thompson</div>
+                <div class="role-label">L1 Weekend</div>
+            </div>
+        </div>
+        
+        <!-- L2 Schedule Section -->
+        <div style="margin: 30px 20px 20px 20px;">
+            <h2 style="color: #495057; margin-bottom: 15px;">L2 Monthly Rotation (July - September 2025)</h2>
+        </div>
+        
+        <div class="schedule-grid">
+            <div class="grid-header">Domain</div>
+            <div class="grid-header">July</div>
+            <div class="grid-header">August</div>
+            <div class="grid-header">September</div>
+            <div class="grid-header">Backup</div>
+            <div class="grid-header">Notes</div>
+            <div class="grid-header"></div>
+            <div class="grid-header"></div>
+            
+            <div class="grid-cell week-label">Backend</div>
+            <div class="grid-cell l2-backend">
+                <div class="person-name">Lisa Park</div>
+                <div class="role-label">L2 Backend</div>
+            </div>
+            <div class="grid-cell l2-backend">
+                <div class="person-name">Ryan Walsh</div>
+                <div class="role-label">L2 Backend</div>
+            </div>
+            <div class="grid-cell l2-backend">
+                <div class="person-name">Lisa Park</div>
+                <div class="role-label">L2 Backend</div>
+            </div>
+            <div class="grid-cell l2-backend">
+                <div class="person-name">Tom Singh</div>
+                <div class="role-label">Always Available</div>
+            </div>
+            <div class="grid-cell">
+                <div style="font-size: 11px; color: #666;">Database expert rotation</div>
+            </div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            
+            <div class="grid-cell week-label">Frontend</div>
+            <div class="grid-cell l2-frontend">
+                <div class="person-name">Maya Johnson</div>
+                <div class="role-label">L2 Frontend</div>
+            </div>
+            <div class="grid-cell l2-frontend">
+                <div class="person-name">Carlos Lopez</div>
+                <div class="role-label">L2 Frontend</div>
+            </div>
+            <div class="grid-cell l2-frontend">
+                <div class="person-name">Maya Johnson</div>
+                <div class="role-label">L2 Frontend</div>
+            </div>
+            <div class="grid-cell l2-frontend">
+                <div class="person-name">Sarah Chen</div>
+                <div class="role-label">Backup Available</div>
+            </div>
+            <div class="grid-cell">
+                <div style="font-size: 11px; color: #666;">UI/UX incident coverage</div>
+            </div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            
+            <div class="grid-cell week-label">Protocol</div>
+            <div class="grid-cell l2-protocol">
+                <div class="person-name">Jordan Lee</div>
+                <div class="role-label">L2 Protocol</div>
+            </div>
+            <div class="grid-cell l2-protocol">
+                <div class="person-name">Jordan Lee</div>
+                <div class="role-label">L2 Protocol</div>
+            </div>
+            <div class="grid-cell l2-protocol">
+                <div class="person-name">Priya Patel</div>
+                <div class="role-label">L2 Protocol</div>
+            </div>
+            <div class="grid-cell l2-protocol">
+                <div class="person-name">Marcus Rivera</div>
+                <div class="role-label">Shadow Support</div>
+            </div>
+            <div class="grid-cell">
+                <div style="font-size: 11px; color: #666;">Network & security focus</div>
+            </div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #2196f3;"></div>
+                <span>L1 Primary/Weekend Coverage</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #9c27b0;"></div>
+                <span>L2 Backend Domain</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #4caf50;"></div>
+                <span>L2 Frontend Domain</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff9800;"></div>
+                <span>L2 Protocol Domain</span>
+            </div>
+        </div>
+        
+        <div class="notes">
+            <h3>📋 Schedule Notes & Guidelines</h3>
+            <ul>
+                <li><strong>L1 Handoff:</strong> Every Monday at 9:00 AM PT via Slack #on-call-general</li>
+                <li><strong>L2 Handoff:</strong> First Monday of each month at 9:00 AM PT</li>
+                <li><strong>Weekend Coverage:</strong> UK team member covers Sat/Sun to reduce NA disruption</li>
+                <li><strong>Backup Escalation:</strong> If primary L2 unavailable, contact backup or escalate to manager</li>
+                <li><strong>PTO Policy:</strong> Must arrange coverage 1 week in advance. Post in #on-call-general</li>
+                <li><strong>Swap Requests:</strong> Use Google Calendar "Find a Time" to coordinate with team</li>
+                <li><strong>Emergency Contact:</strong> Engineering Manager (Sarah Martinez) - Always available for P0 incidents</li>
+            </ul>
+        </div>
+        
+        <div style="padding: 20px; text-align: center; color: #666; font-size: 12px; border-top: 1px solid #dee2e6;">
+            <p>🔄 Last Updated: July 22, 2025 | 📝 Next Review: August 1, 2025</p>
+            <p>Questions? Contact the team in #on-call-general or reach out to your Engineering Manager</p>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactivity for demo purposes
+        document.querySelectorAll('.grid-cell:not(.week-label):not(.grid-header)').forEach(cell => {
+            cell.addEventListener('click', function() {
+                if (this.style.backgroundColor === 'rgb(255, 245, 157)') {
+                    this.style.backgroundColor = '';
+                } else {
+                    this.style.backgroundColor = '#fff59d';
+                }
+            });
+        });
+        
+        // Add current week highlighting
+        const today = new Date();
+        const currentWeek = Math.floor((today.getTime() - new Date('2025-07-21').getTime()) / (7 * 24 * 60 * 60 * 1000));
+        
+        if (currentWeek >= 0 && currentWeek < 4) {
+            const weekRows = document.querySelectorAll('.schedule-grid .grid-cell');
+            for (let i = currentWeek * 8; i < (currentWeek + 1) * 8; i++) {
+                if (weekRows[i + 8]) { // +8 to skip header row
+                    weekRows[i + 8].style.boxShadow = '0 0 0 2px #f44336';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
